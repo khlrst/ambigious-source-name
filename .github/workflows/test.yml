@@ -37,7 +37,11 @@ jobs:
           forge build --sizes
         id: build
 
+      - name: install packages
+        run: |
+          npm install --force
+
       - name: use hardhat-preprocessor
         run: |
           npx hardhat compile --config hardhat.preprocess.config.ts
-        id: test
+        id: compile-test
